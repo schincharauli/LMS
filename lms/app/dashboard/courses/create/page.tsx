@@ -1,6 +1,7 @@
 import { buttonVariants } from "@/components/ui/button";
 import {
   Card,
+  CardContent,
   CardDescription,
   CardHeader,
   CardTitle,
@@ -28,6 +29,7 @@ export default function CourseCreationPAge() {
               Provide Basic Information About the course
             </CardDescription>
           </CardHeader>
+          <CardContent></CardContent>
         </CardHeader>
       </Card>
     </>
