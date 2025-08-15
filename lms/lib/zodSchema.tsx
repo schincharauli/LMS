@@ -4,6 +4,15 @@ export const courseLEvels = ["Beginner", "Intermediate", "Advanced"] as const;
 
 export const courseStatus = ["Draft", "Published", "Archived"] as const;
 
+export const courseCategories = [
+  "Deveopment",
+  "Bussiness",
+  "finance",
+  "IT & Software",
+  "Office productivity",
+  "teaching",
+] as const;
+
 export const courseSchema = z.object({
   title: z
     .string()
@@ -21,7 +30,7 @@ export const courseSchema = z.object({
     .min(1, { message: "Duration must be at least 1 hourslong " })
     .max(500, { message: "Title must be at most 500 hours long " }),
   level: z.enum(courseLEvels, { message: "levels is required" }),
-  category: z.string(),
+  category: z.enum(courseCategories, { message: "Cateories error" }),
   smallDescription: z
     .string()
     .min(3, {
@@ -37,3 +46,5 @@ export const courseSchema = z.object({
     message: "status is required ",
   }),
 });
+
+export type CourseSchemaType = z.infer<typeof courseSchema>;
