@@ -1,4 +1,3 @@
-
 generator client {
   provider = "prisma-client-js"
   output   = "../lib/generated/prisma"
@@ -17,8 +16,6 @@ model User {
   image         String?
   createdAt     DateTime
   updatedAt     DateTime
-  // sessions      Sessions[]
-  // accounts      Account[]
   courses       Course[]
   sessions      Session[]
   accounts      Account[]

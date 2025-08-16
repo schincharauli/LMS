@@ -17,4 +17,4 @@ export const auth = betterAuth({
             clientSecret: env.AUTH_GITHUB_SECRET
         }
     }
-}); 
+});  
