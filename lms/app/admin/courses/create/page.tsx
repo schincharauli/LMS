@@ -155,10 +155,12 @@ export default function CourseCreationPAge() {
                 name="fileKey"
                 render={({ field }) => (
                   <FormItem>
-                    <FormLabel> Thumbnail Image</FormLabel>
+                    <FormLabel>Thumbnail Image</FormLabel>
                     <FormControl>
-                      {/* <Input placeholder="thumbnail url" {...field} /> */}
-                      <Uploader />
+                      <Uploader
+                        value={field.value} // pass current value
+                        onChange={(fileUrl: string) => field.onChange(fileUrl)} // update form on change
+                      />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
