@@ -19,7 +19,7 @@ export function LoginForm() {
     startGithubTransition(async () => {
       await authClient.signIn.social({
         provider: "github",
-        callbackURL: "/",
+        callbackURL: "/admin/courses",
         fetchOptions: {
           onSuccess: () => {
             toast.success("Signed iw with github");

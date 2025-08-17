@@ -9,7 +9,7 @@ import {
 } from "@/components/ui/card";
 import {
   courseCategories,
-  courseLEvels,
+  courseLevels,
   courseSchema,
   CourseSchemaType,
   courseStatus,
@@ -49,7 +49,7 @@ export default function CourseCreationPAge() {
       price: 0,
       duration: 0,
       level: "Beginner",
-      category: "Health and fitness",
+      category: "Bussines",
       status: "Draft",
       slug: "",
       smallDescription: "",
@@ -157,10 +157,8 @@ export default function CourseCreationPAge() {
                   <FormItem>
                     <FormLabel>Thumbnail Image</FormLabel>
                     <FormControl>
-                      <Uploader
-                        value={field.value} // pass current value
-                        onChange={(fileUrl: string) => field.onChange(fileUrl)} // update form on change
-                      />
+                      {/* <Uploader onChange={field.onChange} value={field.value} /> */}
+                      <Uploader />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -211,7 +209,7 @@ export default function CourseCreationPAge() {
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                          {courseLEvels.map((category) => (
+                          {courseLevels.map((category) => (
                             <SelectItem key={category} value={category}>
                               {category}
                             </SelectItem>
@@ -280,35 +278,8 @@ export default function CourseCreationPAge() {
                   </FormItem>
                 )}
               />
-              <FormField
-                control={form.control}
-                name="level"
-                render={({ field }) => (
-                  <FormItem>
-                    <FormLabel>Level</FormLabel>
-                    <Select
-                      onValueChange={field.onChange}
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger className="w-full">
-                          <SelectValue placeholder="Select Level" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        {courseLEvels.map((category) => (
-                          <SelectItem key={category} value={category}>
-                            {category}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                    <FormMessage />
-                  </FormItem>
-                )}
-              />
-              <Button>
-                {" "}
+
+              <Button type="submit">
                 Create Course <PlusIcon className="ml-1" size={16} />{" "}
               </Button>
             </form>
